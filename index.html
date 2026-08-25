@@ -1,0 +1,7 @@
+<!DOCTYPE html>
+<html><head><title>Bot</title><style>body{background:#000;color:#0f0;text-align:center;padding:30px}.b{font-size:40px}</style></head>
+<body><h1>SMART BOT</h1><h2>Balance</h2><div class="b" id="b">Loading...</div>
+<button onclick="fetch('/api/start',{method:'POST'})">START</button>
+<button onclick="fetch('/api/stop',{method:'POST'})">STOP</button>
+<script>async function g(){const r=await fetch('/api/balance');const d=await r.json();document.getElementById('b').innerText='$'+d.balance}g();setInterval(g,3000)</script>
+</body></html>
